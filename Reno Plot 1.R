@@ -1,0 +1,7 @@
+library(readxl)
+Reno_HH <- read_excel("~/Reno HH.xlsx")
+View(Reno_HH)
+names(Reno_HH)
+library(ggplot2)
+scatter <- ggplot(Reno_HH, aes(Users, TotCost))
+scatter + geom_point() + geom_smooth(method = "lm", colour = "Red")+ labs(x = "Users of Hom Health", y = "Total Costs in Millions") 
